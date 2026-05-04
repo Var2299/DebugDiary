@@ -190,7 +190,7 @@ export default function BugEntryCard({
               <span className="text-amber-400" style={{ fontSize: "10px" }}>AI</span>
             </div>
             <span className="text-xs font-mono text-[#4a5878] uppercase tracking-wider">
-              AI Fix Guide
+              Fix Guide
             </span>
           </div>
           <div className="prose-dark">
