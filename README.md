@@ -9,13 +9,44 @@
 | Layer | Tech |
 |-------|------|
 | Framework | Next.js 14 (App Router) |
-| AI | Google Gemini 1.5 Flash |
+| AI | Google Gemini 2.5 Flash lite |
 | Database | MongoDB + Mongoose |
 | Styling | Tailwind CSS |
 | Markdown | react-markdown + remark-gfm |
 | Highlighting | rehype-highlight (highlight.js) |
 | Toasts | react-hot-toast |
 | Language | TypeScript |
+
+---
+
+
+## Features
+
+### 🏠 Dashboard
+- Project cards with bug count, last activity, and status badges
+- "🐛 X bugs crushed" motivational counter
+- One-click project creation
+
+### 🤖 AI Bug Fixing
+- Paste any error → Gemini analyses it immediately
+- Structured response: What it means → Cause → Step-by-step fix → Prevention
+- Clean Markdown with syntax-highlighted code blocks
+
+### 📁 Project Management
+- Organise bugs by project (WorkApp, MyPortfolio, etc.)
+- Browser-tab style navigation between projects
+- Project names are unique per anonymous user (stored in localStorage)
+
+### 🔍 Search
+- Keyword search within a project
+- "Search All Projects" toggle for cross-project search
+- Debounced, real-time filtering
+
+### 📖 Bug Diary
+- Expandable/collapsible error text and AI fix
+- Status toggle: "Solved ✓" / "Still Investigating"
+- Pagination (10 per page)
+- Delete individual entries
 
 ---
 
@@ -53,36 +84,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
-
----
-
-## Features
-
-### 🏠 Dashboard
-- Project cards with bug count, last activity, and status badges
-- "🐛 X bugs crushed" motivational counter
-- One-click project creation
-
-### 🤖 AI Bug Fixing
-- Paste any error → Gemini analyses it immediately
-- Structured response: What it means → Cause → Step-by-step fix → Prevention
-- Clean Markdown with syntax-highlighted code blocks
-
-### 📁 Project Management
-- Organise bugs by project (WorkApp, MyPortfolio, etc.)
-- Browser-tab style navigation between projects
-- Project names are unique per anonymous user (stored in localStorage)
-
-### 🔍 Search
-- Keyword search within a project
-- "Search All Projects" toggle for cross-project search
-- Debounced, real-time filtering
-
-### 📖 Bug Diary
-- Expandable/collapsible error text and AI fix
-- Status toggle: "Solved ✓" / "Still Investigating"
-- Pagination (10 per page)
-- Delete individual entries
 
 ---
 
@@ -138,17 +139,6 @@ All requests pass `x-user-id` header (set from localStorage).
 - `BugEntry`: Full-text index on `errorText + aiFixMarkdown` for search
 - `Project`: Compound unique index on `name + userId`
 - Both models indexed on `userId` for fast per-user queries
-
----
-
-## Adding Auth
-
-Currently uses anonymous user IDs from localStorage. To add authentication:
-
-1. Integrate NextAuth.js or Clerk
-2. Replace `getUserId()` calls with `session.user.id`
-3. Pass real user ID in `x-user-id` header
-4. All data is already partitioned by `userId` in MongoDB
 
 ---
 
