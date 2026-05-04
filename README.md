@@ -58,10 +58,9 @@
 
 ### Fixing Error
 <img width="971" height="837" alt="image" src="https://github.com/user-attachments/assets/ac627b04-185a-4aed-b663-72f70824b1b4" />
+<img width="1307" height="627" alt="image" src="https://github.com/user-attachments/assets/fb5f4d47-62ff-4560-a506-8717140f73d3" />
 
 ---
-
-<img width="1918" height="625" alt="image" src="https://github.com/user-attachments/assets/78b4398c-42a6-49e4-83c0-80d585599bf3" />
 
 ### 
 
